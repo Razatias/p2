@@ -1,5 +1,14 @@
+body{
+    text-align: center;
+    margin: auto;
+}
 .password {
-  color:red;
+  color:green;
+  border:2px blue solid;
+  width: 300px;
+  margin:auto;
+  font-size: 200%;
+
 }
 .error {
       color: black;

@@ -5,8 +5,6 @@
 
 	<title>Password Generator</title>
 	<meta charset='utf-8'>
-
-	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	<link href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css' rel="stylesheet">
 	<link href='css/style.css' rel='stylesheet'>
   <?php require 'logic.php'; ?>
@@ -15,36 +13,37 @@
 <body>
 
 	<div class='container'>
-		<h1>xkcd Password Generator</h1>
+    <div class="row">
+      <div class="twelve column">
+        <h1>Password Generator</h1>
+        <br>
+		    <p class='password'>
+		    <?php echo $password ?>	</p><br>
+      </div>
+    </div>
 
-		<p class='password'>
-		<?php echo $password ?>	</p>
+    <div class="row">
+      <div class="twelve column">
+    		<form action="index.php" method="get">
+    				<label for='number_of_words'># of Words</label>
+    				<input class="u-half-width" maxlength=1 type='text' name='number_of_words' id='number_of_words' value='' class="u-full-width" placeholder="1 - 9">  (Max 9)
 
-		<form action="index.php" method="get">
-			<p class='options'>
-
-				<label for='number_of_words'># of Words</label>
-				<input maxlength=1 type='text' name='number_of_words' id='number_of_words' value=''>  (Max 9)
-				<br>
-
+        <label for='add_number'>Add a number</label>
 				<input type='checkbox' name='add_number' id='add_number' >
-				<label for='add_number'>Add a number</label>
-				<br>
+        <label for='add_symbol'>Add a symbol</label>
 				<input type='checkbox' name='add_symbol' id='add_symbol' >
-				<label for='add_symbol'>Add a symbol</label>
 			</p>
 
-			<input type='submit' class='btn btn-default' value='Get password'>
+			<input type='submit' class='button button-primary' value='Get password'>
 
       <?php if(isset($error)): ?>
            <div class='error'><?php echo $error; ?></div>
        <?php endif ?>
 
-		</form>
-
-	</div>
-
-	<script src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
+		   </form>
+     </div>
+   </div>
+</div>
 
 </body>
 </html>
